@@ -1,0 +1,458 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+}
+ul li{
+    list-style: none;
+}
+img{
+    vertical-align: middle;
+}
+body{
+    font-family: sans-serif;
+    background-color: rgba(99, 89, 133, 0.5);
+    height: 100vh;
+    width: 100vw;
+}
+
+.close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 29px;
+    color: #1479EA;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* common css end */
+/* section css start */
+
+#numberGuessingGame{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+#numberGuessingGame .main{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: #18122B;
+
+}
+#numberGuessingGame .main h2{
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+#numberGuessingGame .main #startGame{
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+    background-size: 250%;
+    background-position: left;
+    color: #000000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 1s;
+    overflow: hidden;
+}
+#numberGuessingGame .main #startGame::before{
+    position: absolute;
+    content: "Start The Game";
+    color: #ffd277;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 97%;
+    height: 90%;
+    border-radius: 8px;
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.842);
+    background-size: 200%;
+}
+#numberGuessingGame .main #startGame:hover{
+    background-position: right;
+    transition-duration: 1s;
+}
+#numberGuessingGame .main #startGame:hover::before{
+    background-position: right;
+    transition-duration: 1s;
+}
+#numberGuessingGame .main #startGame:active{
+    transform: scale(0.95);
+}
+.playerName{
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #FFFFFF;
+}
+.error{
+    color: #e93131;
+    text-transform: capitalize;
+    margin-top: 5px;
+    font-size: 13px;
+}
+/* section css end */
+/* player one css start */
+
+#numberGuessingGame .player_one{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    margin-top: 100px;
+    padding: 100px 50px;
+    width: 700px;
+    background-color: #40534C;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;align-items: center;
+    transition: .4s;
+    border-radius: 14px;
+}
+.inputField{
+    width: 70%;
+    max-width: 400px;
+    background-color: #f5f5f5;
+    color: #242424;
+    padding: .15rem .5rem;
+    min-height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+    margin: 15px 0;
+}
+
+.inputField:focus{
+    border-bottom: 2px solid #2b2b40;
+    border-radius: 4px 4px 2px 2px;
+}
+.inputField:hover{
+    outline: 1px solid lightgrey;
+}
+
+#numberGuessingGame .player_one #playerOneSubmit {
+    width: 10em;
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #numberGuessingGame .player_one #playerOneSubmit::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #40534C;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  
+  #numberGuessingGame .player_one #playerOneSubmit::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #40534C;
+    transition: 0.5s;
+  }
+  
+#playerOneSubmit:hover::before, #playerOneSubmit:hover::after {
+    transform: scale(0)
+  }
+  
+  #numberGuessingGame .player_one #playerOneSubmit:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+  }
+
+/* player one css end */
+/* player two css start */
+
+#numberGuessingGame .player_two{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    margin-top: 90px;
+    padding: 100px 50px;
+    width: 700px;
+    background-color: #577036;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;align-items: center;
+    transition: .4s;
+    border-radius: 10px;
+}
+#numberGuessingGame .player_two button{
+    width: 250px;
+    --bg: #000;
+    --hover-bg: #ff90e8;
+    --hover-text: #000;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid var(--bg);
+    border-radius: 4px;
+    padding: 0.8em 2em;
+    background: var(--bg);
+    transition: 0.2s;
+
+}
+
+#numberGuessingGame .player_two button:hover{
+    
+    color: var(--hover-text);
+    transform: translate(-0.25rem, -0.25rem);
+    background: var(--hover-bg);
+    box-shadow: 0.25rem 0.25rem var(--bg);
+    
+    
+}
+#numberGuessingGame .player_two button:active{
+
+    transform: translate(0);
+    box-shadow: none;
+}
+.playerTwoHead{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    justify-content: space-between;
+}
+.playerTwoHead .chance{
+    color: greenyellow;
+    font-size: 19px;
+    font-weight: 600;
+}
+  
+
+/* player two css end */
+
+#resetGame{
+    margin-top: 150px;
+    padding: 10px 50px;
+    background-color: #582d2d;
+    border-radius: 10px;
+    border: none;
+    cursor: none;
+    color: rgb(22, 205, 230);
+    font-size: 20px;
+    letter-spacing: 2px;
+    transform: scale(0);
+    transition: .4s;
+}
+
+#pop-up{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    margin-top: 100px;
+    background: rgb(90,135,8);
+    background: linear-gradient(90deg, rgba(90,135,8,1) 0%, rgba(9,121,83,1) 47%, rgba(0,212,255,1) 100%); 
+    width: 80%;
+    height: 70%;
+    backdrop-filter: blur(500px);
+    /* -webkit-filter: blur(8px);   */
+    border-radius: 20px;
+    /* z-index: 99999; */
+    padding: 20px 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    transition: .3s ease-in;
+}
+#pop_up{
+    font-size: 30px;
+    background-color: #eea913;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+
+
+/* buttons */
+#okButton {
+    position: relative;
+    padding: 12px 35px;
+    background: #1c95c5;
+    font-size: 17px;
+    font-weight: 500;
+    color: #181818;
+    border: 3px solid #fec195;
+    border-radius: 8px;
+    box-shadow: 0 0 0 #fec1958c;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .star-1 {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+  }
+  
+  .star-2 {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-3 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-4 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-5 {
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-6 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s ease;
+  }
+  
+  #okButton:hover {
+    background: transparent;
+    color: #fec195;
+    box-shadow: 0 0 25px #fec1958c;
+  }
+  
+  #okButton:hover .star-1 {
+    position: absolute;
+    top: -80%;
+    left: -30%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #okButton:hover .star-2 {
+    position: absolute;
+    top: -25%;
+    left: 10%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #okButton:hover .star-3 {
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #okButton:hover .star-4 {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #okButton:hover .star-5 {
+    position: absolute;
+    top: 25%;
+    left: 115%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  #okButton:hover .star-6 {
+    position: absolute;
+    top: 5%;
+    left: 60%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  .fil0 {
+    fill: #fffdef;
+  }
+  
